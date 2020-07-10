@@ -1,1 +1,15 @@
-<p>products works!</p>
+<div class="search-panel">
+  <input type="text" placeholder="Search Product" class="search-box" [(ngModel)]="searchString">
+  <button class="button" (click)="searchProduct()"><i class="fa fa-search" aria-hidden="true"></i></button>
+  <button class="button" (click)="clearSearchProduct()"><i class="fa fa-repeat" aria-hidden="true"></i></button>
+</div>
+<div class="main-panel">
+  <div class="filter-panel">
+    <app-product-filter
+    [productFilters]="productFilters"
+    (change)="filterChanged($event)"></app-product-filter>
+  </div>
+  <div class="content-panel">
+    <app-product-list [products]="filterdProducts"></app-product-list>
+  </div>
+</div>

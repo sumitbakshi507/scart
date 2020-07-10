@@ -1,0 +1,50 @@
+@import "./../../variables";
+
+.main-panel {
+  border: solid 1px yellow;
+  display: flex;
+
+  .filter-panel {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    min-height: 500px;
+  }
+
+  .content-panel {
+    float: left;
+    padding: 0px 24px;
+    border: 1px solid #ccc;
+    width: 70%;
+    border-left: none;
+    min-height: 500px;
+  }
+}
+
+.search-panel {
+  display: inline;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  .search-box {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    min-width: 250px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .search-box:focus-within() {
+    min-width: 300px;
+    border:solid 1px $primary-color;
+  }
+
+  button {
+    width: 35px;
+  }
+}

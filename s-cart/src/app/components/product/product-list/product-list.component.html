@@ -1,0 +1,25 @@
+<div class="product" *ngFor="let p of products">
+  <span class="discount-perc" *ngIf="p.discount> 0">{{p.discount}}%</span>
+  <div class="img-panel">
+    <img [src]="p.image">
+  </div>
+  <div class="content-box">
+    <table>
+      <colgroup>
+        <col style="width: 170px;" />
+        <col style="width: 70px;" />
+      </colgroup>
+      <tr>
+        <td>{{p.title}}</td>
+        <td class="right-align">{{p.colour.title}}<span class="color-box"[style.backgroundColor]="p.colour.color">&nbsp;</span></td>
+      </tr>
+      <tr>
+        <td>{{p.brand}}</td>
+        <td class="right-align"><a class="add-button" (click)="addToCart(p)">Add <i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
+      </tr>
+      <tr>
+        <td><span [ngClass]="{'strike': p.price.mrp !== null}">{{p.price.mrp}} </span>{{p.price.final_price}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

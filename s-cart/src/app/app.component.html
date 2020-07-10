@@ -1,4 +1,6 @@
-<header></header>
+<header *ngIf="isAuthenticated">
+  <app-header [name]="name"></app-header>
+</header>
 <div class="main">
   <main>
     <router-outlet></router-outlet>

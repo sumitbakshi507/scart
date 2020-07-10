@@ -1,0 +1,58 @@
+.toolbar {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+    color: #fff;
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .cart {
+    height: 40px;
+    margin: 0 16px;
+    cursor: pointer;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  .cart:hover {
+    opacity: 0.8;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+}
+
+
+/*
+.logo {
+  color: #eee;
+  vertical-align: middle;
+  display: inline-block;
+  img {
+    margin-top: 3px;
+  }
+}
+
+.auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome {
+  color: #eee;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.cart {
+  color: #eee;
+  vertical-align: middle;
+  display: inline-block;
+}
+*/
