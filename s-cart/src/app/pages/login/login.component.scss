@@ -1,0 +1,36 @@
+@import "./../../variables";
+
+.login-panel {
+  display: flex;
+  flex-direction: column;
+
+  .text-control {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 4px;
+    min-width: 300px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .text-control:focus-within() {
+    min-width: 300px;
+    border:solid 1px $primary-color;
+  }
+
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948;
+  }
+
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442;
+  }
+
+  .alert-danger {
+    color:red;
+    font-size: 1rem;
+  }
+}

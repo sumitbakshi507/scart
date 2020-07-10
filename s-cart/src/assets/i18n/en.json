@@ -1,0 +1,9 @@
+{
+  "main": {
+      "title": "Welcome to S-Cart",
+      "errors": {
+        "EMAIL_NOT_FOUND": "This email/username does not exist.",
+        "INVALID_PASSWORD": "This password is not correct."
+      }
+  }
+}
