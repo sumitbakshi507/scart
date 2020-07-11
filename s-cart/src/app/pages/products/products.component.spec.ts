@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
+import { ProductService } from 'src/app/services/product.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
@@ -8,18 +11,31 @@ describe('ProductsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule, FormsModule, ReactiveFormsModule],
       declarations: [ ProductsComponent ]
     })
     .compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ProductsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  describe(':', () => {
+    function setup() {
+      const fixture = TestBed.createComponent(ProductsComponent);
+      const productService = fixture.debugElement.injector.get(ProductService);
+      const component = fixture.componentInstance;
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+      return { fixture, component, productService };
+    }
+
+    beforeEach(() => {
+      const setupObj = setup();
+      fixture = setupObj.fixture;
+      component = setupObj.component;
+      setupObj.fixture.detectChanges();
+    });
+
+    it('should create', () => {
+      component.ngOnInit();
+      expect(component).toBeTruthy();
+    });
   });
 });
