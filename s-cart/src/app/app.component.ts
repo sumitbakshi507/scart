@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'Welcome to SCart';
   userSubs: Subscription;
   isAuthenticated: boolean;
+  name: string;
 
   constructor(
     private titleService: Title,
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit, OnDestroy {
           this.route.navigate(['auth']);
         }
         if (this.isAuthenticated) {
+          this.name = user.fullName;
           this.route.navigate(['']);
         }
       });

@@ -1,0 +1,23 @@
+<div class="filters-header">
+  <b>Filters</b>
+  <i class="fa fa-repeat" aria-hidden="true"></i>
+</div>
+
+<div class="filter" *ngFor="let f of productFilters">
+  {{f.type}}
+  <div>
+    <ng-container  *ngFor="let filterItem of f.values; index as i;" >
+      <div class="filter-item" *ngIf="(i < 10 && !getFilters(f.type))">
+        <i  class="fa" [ngClass]="selectionStatus(filterItem, f.type)? 'fa-check-square-o':'fa-square-o'"
+          aria-hidden="true"
+          (click)="selectFilter(filterItem, f.type)">
+          {{getLabel(filterItem, f.type)}}
+        </i>
+      </div>
+    </ng-container>
+  </div>
+  <div>
+    <a *ngIf="!getFilters(f.type)">more...</a>
+    <a *ngIf="getFilters(f.type)">less...</a>
+  </div>
+</div>
